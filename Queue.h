@@ -5,8 +5,8 @@
 *       -Fast operations: O(1) push(), pop(), front() and back()             *
 *       -Built in list functions and size tracking are helpful               *
 *    Limitations:                                                            *
-*       -Can only remove from the front one at a time                        *
-*       -No way to access anything in the middle or end                      *
+*       -Can only remove from the front one at a time for queues             *
+*       -No conventional way to access anything in the middle or end for both*
 *       -Lists are known for their poor reference locality                   *
 *****************************************************************************/
 
@@ -28,8 +28,8 @@ class Queue{
         T& operator=(const Queue<T>& other);
         void push(const T& data);
         void pop();     //Pops front
-        T& front();
-        T& back();
+        T front() const;
+        T back() const;
         bool empty() const;
         int size() const;
 };
